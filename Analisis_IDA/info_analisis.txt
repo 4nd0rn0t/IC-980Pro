@@ -1,0 +1,7 @@
+Ponemos la carpeta firmloader_data en la carpeta de plugins de IDA y el firmloader.py.
+Seleccionamos e fichero firmware.bin y seleccionamos CPU tipo ARM little-endian
+Ponemos los datos como la captura **Configuración para IDA**
+En menú edit parte de abajo sale firmloader hacemos clip y seleccionamos el micro ST32F103
+
+
+

@@ -1,0 +1,34 @@
+Actualizar Linux -> sudo apt-get update , etc...
+
+Instalar openocd -> sudo apt-get install openocd
+
+Verificar instalación -> openocd --help
+
+
+Ejecutar terminal 1 -> sudo openocd -f interface/jlink.cfg -c "transport select swd" -f target/stm32f1x.cfg
+
+Ejecutar terminal 2 -> sudo python3 main.py {direccion_inicial en hexadecimal} {longitud en decimal va en dword} --binary --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+
+
+Para leer todo el firmware (programado) hasta 96 Kbytes; posiblemente otras versiones disponga de mas capacidad se puede verificar haciendo lecturas en direcciones mas altas o leer toda la flash del microcontrolador 512K.
+
+sudo python3 main.py 0x00000000 4096 --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+sudo python3 main.py 0x00004000 4096 --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+sudo python3 main.py 0x00008000 4096 --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+sudo python3 main.py 0x0000C000 4096 --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+sudo python3 main.py 0x00010000 4096 --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+sudo python3 main.py 0x00014000 4096 --value 0xaaaaaaaa | stdbuf -o0 xxd -e | egrep "aaaaaaaa|"
+
+
+main.py comprueba si esta el fichero firmware.bin si no esta genera uno de 512K de capacidad con los datos 0xFF.
+Cuando va haciendo las lecturas según las direcciones indicadas y la longitud se sobrescribe los datos en el fichero firmware.bin, así se puede
+hacer la lectura del firmware por trozos, ya que esta técnica no es muy rápida. 
+
+
+
+Proyecto realizado con la info:
+
+https://gitlab.zapb.de/zapb/stm32f1-firmware-extractor
+https://github.com/doegox/stm32f1-firmware-extractor/tree/master
+
+

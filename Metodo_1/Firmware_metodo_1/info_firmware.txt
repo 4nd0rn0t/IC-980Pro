@@ -1,0 +1,2 @@
+La diferencia entre estos dos ficheros es por el formato little endian y big endian se modifico para que IDA los pudiera leer.
+Ya se realizo la modificacion para que IDA lo pueda analizar.
