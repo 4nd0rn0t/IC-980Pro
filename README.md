@@ -75,4 +75,4 @@ https://github.com/doegox/stm32f1-firmware-extractor/tree/master
 
 
 
-Gracias a todos los que comparten su conocimiento y tiempo en comunidades de ingeniera inversa, electrónica y hacking. Este proyecto es posible gracias a la curiosidad de muchos, quiero expresar mi sincero agradecimiento a **Mecanico** por su valiosa ayuda y animarme a realizar esta publicación. 
+Gracias a todos los que comparten su conocimiento y tiempo en comunidades de ingeniera inversa, electrónica y hacking. Este proyecto es posible gracias a la curiosidad de muchos, quiero expresar mi sincero agradecimiento a **Mecanico**  de Hardware Hacking por su valiosa ayuda y animarme a realizar esta publicación. 
